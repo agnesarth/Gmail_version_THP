@@ -8,6 +8,7 @@ class EmailsController < ApplicationController
     @email = Email.create(
       object: Faker::DcComics.title,
       body: Faker::Hipster.paragraph,
+      read: false
     )
     respond_to do |format|
       format.html { redirect_to root_path }
