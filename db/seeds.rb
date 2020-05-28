@@ -20,6 +20,7 @@ require 'faker'
 #end
 
 #user = User.create(email: "luloh.choco@yopmail.com", password: "bonjour")
+Email.delete_all
 
 10.times do
   email = Email.create(

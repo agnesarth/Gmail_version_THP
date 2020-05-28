@@ -10,18 +10,12 @@
           </tr>
         </thead>
         <tbody>
-          <tr>
-            <th scope="row">1</th>
-            <td>Mark</td>
-          </tr>
-          <tr>
-            <th scope="row">2</th>
-            <td>Jacob</td>
-          </tr>
-          <tr>
-            <th scope="row">3</th>
-            <td>Larry</td>
-          </tr>
+          <% @emails.each do |email|  %>
+            <tr>
+              <th scope="row"><%= email.id %></th>
+              <td><%= email.object %></td>
+            </tr>
+          <%end%>
         </tbody>
       </table>
     </div>
