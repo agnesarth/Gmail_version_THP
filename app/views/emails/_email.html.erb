@@ -1,4 +1,6 @@
 <tr id="<%= email.id %>">
-  <th scope="row"><%= email.id %></th>
-  <td><%= link_to email.object, email_path(email), remote: true %></td>
+  <th scope="row">
+  <%= email.id %></th>
+  <td><%= check_box_tag :read, 1, email.read, data: { remote: true, url: email_path(email.id), params: {read: !email.read}.to_param, method: "put" }%>
+  <%= link_to email.object, email_path(email), remote: true %></td>
 </tr>

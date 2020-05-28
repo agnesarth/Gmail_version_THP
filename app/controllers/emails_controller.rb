@@ -19,6 +19,12 @@ class EmailsController < ApplicationController
   end
 
   def update
+    @email = Email.find(params[:id])
+    @email.update(email_params)
+    respond_to do |format|
+      format.html { redirect_to root_path }
+      format.js { }
+    end
   end
 
   def index
@@ -45,6 +51,6 @@ class EmailsController < ApplicationController
   private
 
   def email_params
-    params.require(:emails).permit(:object, :body)
+    params.permit(:object, :body, :read)
   end
 end

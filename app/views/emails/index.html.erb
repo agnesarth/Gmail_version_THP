@@ -13,7 +13,7 @@
           </tr>
         </thead>
         <tbody  id="email">
-          <% @emails.each do |email|  %>
+          <% @emails.order("id ASC").each do |email|  %>
             <%= render 'email', email: email%>
           <%end%>
         </tbody>
