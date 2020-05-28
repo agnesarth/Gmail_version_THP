@@ -1,6 +1,7 @@
 class EmailsController < ApplicationController
   require 'faker'
   def new
+    
   end
 
   def create
@@ -24,6 +25,20 @@ class EmailsController < ApplicationController
     @emails = Email.all
   end
 
+  def show
+    @email = Email.find(params[:id])
+    respond_to do |format|
+      format.html { redirect_to email_path(@email) }
+      format.js { }
+    end
+  end
+
   def destroy
+  end
+
+  private
+
+  def email_params
+    params.require(:emails).permit(:object, :body)
   end
 end
