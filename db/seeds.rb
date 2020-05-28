@@ -26,5 +26,6 @@ Email.delete_all
   email = Email.create(
     object: Faker::DcComics.title,
     body: Faker::Hipster.paragraph,
+    read: false
   )
 end
