@@ -1,1 +1,50 @@
-<h1>Welcome sur the Email page</h1>
+<div class="container-fluid">
+  <h1>Boîte de réception</h1><br/>
+  <div class = "row">
+    <div class="col-5">
+      <table class="table table-striped">
+        <thead>
+          <tr class="bg-primary text-white text-center">
+            <th scope="col">#</th>
+            <th scope="col" class="col-4">Emails reçus</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row">1</th>
+            <td>Mark</td>
+          </tr>
+          <tr>
+            <th scope="row">2</th>
+            <td>Jacob</td>
+          </tr>
+          <tr>
+            <th scope="row">3</th>
+            <td>Larry</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="col-7">
+      <table class="table table-striped">
+        <thead>
+          <tr class="bg-primary text-white text-center">
+            <th scope="col">Objet de l'email</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Contenu de l'email</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <% @emails.each do |email|  %>
+    <li>
+      <%= email.object %>,
+      "Contenu : " <%=  email.body %>
+    </li>
+  <% end %>
+</div>
