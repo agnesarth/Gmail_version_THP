@@ -1,1 +1,5 @@
-alert("email updaté")
+<% if @email.read == true %>
+  document.getElementById("<%= @email.id %>").style.fontWeight = "lighter";
+<% else %>
+  document.getElementById("<%= @email.id %>").style.fontWeight = "bold";
+<% end %>
