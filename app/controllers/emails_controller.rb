@@ -8,6 +8,10 @@ class EmailsController < ApplicationController
       object: Faker::DcComics.title,
       body: Faker::Hipster.paragraph,
     )
+    respond_to do |format|
+      format.html { redirect_to root_path }
+      format.js { }
+    end
   end
 
   def edit

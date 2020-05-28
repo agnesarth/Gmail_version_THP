@@ -1,7 +1,7 @@
 <div class="container-fluid">
   <div class="container-fluid row">
     <h1 class="mr-auto">Boîte de réception</h1>
-    <%= link_to "Recevoir un email", emails_path, :method => :post, :class => "btn btn-primary", :style => "height: 33px; align-self: center" %>
+    <%= link_to "Recevoir un email", emails_path, :method => :post, :class => "btn btn-primary", :style => "height: 33px; align-self: center", remote: true %>
   </div><br/>
   <div class = "row">
     <div class="col-5">
@@ -12,14 +12,9 @@
             <th scope="col" class="col-4">Emails reçus</th>
           </tr>
         </thead>
-        <tbody>
-          <% n = 1%>
+        <tbody  id="email">
           <% @emails.each do |email|  %>
-            <tr>
-              <th scope="row"><%= n %></th>
-              <td><%= email.object %></td>
-              <% n += 1%>
-            </tr>
+            <%= render 'email', email: email%>
           <%end%>
         </tbody>
       </table>
@@ -40,10 +35,4 @@
       </table>
     </div>
   </div>
-  <% @emails.each do |email|  %>
-    <li>
-      <%= email.object %>,
-      "Contenu : " <%=  email.body %>
-    </li>
-  <% end %>
 </div>
