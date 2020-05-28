@@ -1,5 +1,8 @@
 <div class="container-fluid">
-  <h1>Boîte de réception</h1><br/>
+  <div class="container-fluid row">
+    <h1 class="mr-auto">Boîte de réception</h1>
+    <%= link_to "Recevoir un email", emails_path, :method => :post, :class => "btn btn-primary", :style => "height: 33px; align-self: center" %>
+  </div><br/>
   <div class = "row">
     <div class="col-5">
       <table class="table table-striped">
@@ -10,10 +13,12 @@
           </tr>
         </thead>
         <tbody>
+          <% n = 1%>
           <% @emails.each do |email|  %>
             <tr>
-              <th scope="row"><%= email.id %></th>
+              <th scope="row"><%= n %></th>
               <td><%= email.object %></td>
+              <% n += 1%>
             </tr>
           <%end%>
         </tbody>
