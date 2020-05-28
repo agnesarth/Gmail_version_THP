@@ -9,6 +9,7 @@
   </tr>
   <div class="row boutons-email">
     <%= link_to "Supprimer", email_path(email), :method => :delete, :class => "btn btn-primary bouton-email", remote: true %>
-    <%= link_to "Marquer comme non lu", root_path, :class => "btn btn-primary bouton-email" %>
+    <%= link_to "Marquer comme non lu", email_path(email), :method => :put, :class => "btn btn-outline-primary bouton-email", remote: true %>
+
   </div>
 </tbody>

@@ -20,7 +20,7 @@ class EmailsController < ApplicationController
 
   def update
     @email = Email.find(params[:id])
-    @email.update(email_params)
+    @email.update(read: !@email.read)
     respond_to do |format|
       format.html { redirect_to root_path }
       format.js { }

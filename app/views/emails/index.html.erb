@@ -12,7 +12,7 @@
             <th scope="col" class="col-4">Emails reçus</th>
           </tr>
         </thead>
-        <tbody  id="email">
+        <tbody id="email">
           <% @emails.order("id ASC").each do |email|  %>
             <%= render 'email', email: email%>
           <%end%>
